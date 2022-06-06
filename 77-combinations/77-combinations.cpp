@@ -8,7 +8,7 @@ public:
         
         for(int i = num; i <= n; i++) {
             subset.push_back(i);
-            solve(i + 1, k-1, n, subset, res);
+            solve(i + 1, k-1, n,subset, res);
             subset.pop_back();
         }
     }
