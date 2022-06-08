@@ -4,18 +4,21 @@ public:
 	bool issafe(int r,int c,vector<string>&v,int n){
 		//column check 
 		for(int i=0;i<=r;i++){
-			if(v[i][c]=='Q') return false;
+			if(v[i][c]=='Q') 
+                return false;
 		}
 		//diagonal check upper left side
 		int row=r,col=c;
 		while(row>=0 && col>=0){
-			if(v[row][col]=='Q') return false;
+			if(v[row][col]=='Q')
+                return false;
 			row--,col--;
 		}
 		//diagonal check upper right side
 		row=r,col=c;
 		while(row>=0 && col<n){
-			if(v[row][col]=='Q') return false;
+			if(v[row][col]=='Q') 
+                return false;
 			row--,col++;
 		}
 		return true;
