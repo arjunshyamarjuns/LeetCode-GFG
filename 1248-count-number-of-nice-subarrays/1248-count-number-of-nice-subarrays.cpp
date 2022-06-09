@@ -7,10 +7,10 @@ public:
             if(nums[i]%2 !=0)
                 sum++;
             if(sum==k)
-                ans++; // incrementing ans for each sub array with k
+                ans++; 
             if(mp.count(sum-k))
-                ans+=mp[sum-k]; // addding ans to with map value so it will consider all sub array before it.
-            mp[sum]++; // add all sum value in map.
+                ans+=mp[sum-k]; 
+            mp[sum]++;
         }
         return ans;
     }
