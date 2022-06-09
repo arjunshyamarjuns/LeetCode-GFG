@@ -14,12 +14,10 @@ public:
            unordered_map<int,int> m;
        int c=0;
        for(int i=0;i<n;i++){
-           // let assume if a+b=k then b=k-a;
            int a=arr[i]; 
            int b=k-a; 
            if(m[b]){ 
-               // check whether already available or not in map
-               // if available then add its frequency
+              
                c+=m[b];
            }
            m[a]++;
