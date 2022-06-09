@@ -2,7 +2,8 @@ class Solution {
 public:
     int carFleet(int target, vector<int>& position, vector<int>& speed) {
          int n = position.size();
-        if (n == 1) return 1;
+        if (n == 1) 
+            return 1;
         
         vector<pair<int, double>> startPosAndTravelTime(n);
         for (int i = 0; i <n;  i++)
