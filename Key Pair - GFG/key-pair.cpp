@@ -12,23 +12,18 @@ public:
 	// whose sum is equal to the given value
 	bool hasArrayTwoCandidates(int arr[], int n, int x) {
 	    // code here
-	      int i;
-    unordered_map<int,int> mp;
-    for(i=0;i<n;i++){
-        mp[arr[i]]++;
-    }
-    for(i=0;i<n;i++){
-        if(mp.find(x-arr[i]) != mp.end() && x-arr[i] != arr[i]){
-            //cout<<arr[i];
-            return 1;
-        }
-        else if(x-arr[1] == arr[i] && mp[arr[i]]>1){
-            
-            return 1;
-        }
-    }
-    return 0;
-}
+   unordered_map<int,int> m;
+	    for(int i=0;i<n;i++){
+	        int target = x-arr[i];
+	        if(m.find(target) != m.end()){
+	            return true;
+	        }
+	        else{
+	            m[arr[i]];
+	        }
+	    }
+	    return false;
+	}
 	
 };
 
