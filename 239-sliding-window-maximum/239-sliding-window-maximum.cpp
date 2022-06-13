@@ -13,7 +13,8 @@ public:
                 q.push_back(nums[j]);
             }
             
-            if((j-i+1)<k)j++;
+            if((j-i+1)<k)
+                j++;
             else if((j-i+1)==k){
                 ans.push_back(q.front());
                 if(!q.empty()&&q.front()==nums[i])
