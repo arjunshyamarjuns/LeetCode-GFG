@@ -13,10 +13,10 @@ public:
     ListNode* reverseList(ListNode* head) {
        ListNode* current = head;
     ListNode* previous = NULL;
-    
+    ListNode* n;
     while(current != NULL){
         
-        ListNode* n = current->next;//to store the current node 
+        n = current->next;//to store the current node 
         current->next = previous; //next of current link to the previous
         previous = current; 
         current = n;
