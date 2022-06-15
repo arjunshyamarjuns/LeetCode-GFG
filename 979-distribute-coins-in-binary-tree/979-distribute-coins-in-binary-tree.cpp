@@ -14,16 +14,17 @@ public:
      int res;
     int distributeCoins(TreeNode* root) {
         res = 0;
-        excessCoins_Dfs(root) ;       // this recursive function will return the excess no. of coins for a particular node
+        excessCoins_Dfs(root) ;
         return res;
     }
     int excessCoins_Dfs(TreeNode* root){
-        if(!root)       return 0;                   // base case when null is encountered
-        int LeftExcess = excessCoins_Dfs(root->left);       // we will get the excess coins from left subtree
-        int RighttExcess = excessCoins_Dfs(root->right);    // we will get the excess coins from right subtree
-        res+= abs(LeftExcess)+abs(RighttExcess);            //tricy part: the no. of movements will be abs sum of left and right part
+        if(!root)       
+            return 0;
+        int LeftExcess = excessCoins_Dfs(root->left);       
+        int RighttExcess = excessCoins_Dfs(root->right); 
+        res+= abs(LeftExcess)+abs(RighttExcess);           
             
-        return root->val+LeftExcess+RighttExcess-1;     // tricky part: the excess will be this value consider a simple tree with a left node and right node having 0 coins and root having 3 coins u will get it ;) /
+        return root->val+LeftExcess+RighttExcess-1;
         
         
     }
