@@ -26,19 +26,18 @@ void Node_at_depth_k(TreeNode *root, int k)
     Node_at_depth_k(root->right, k - 1);
 }
 
-// return distance , -1 -> not found
 
 int helper(TreeNode *root, TreeNode *target, int k)
 {
     if (root == NULL)
     {
-        return -1; // node not found
+        return -1;
     }
 
     if (root->val == target->val)
     {
         Node_at_depth_k(root, k);
-        return 0; // dis fron root to root == 0;
+        return 0; 
     }
 
     int ld = helper(root->left, target, k);
