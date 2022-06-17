@@ -12,19 +12,18 @@
 class Solution {
 public:
     int solve(TreeNode* root,int &maxi,int &mini,int &sum){
-    if(root == NULL) return 0;
+    if(root == NULL)
+        return 0;
     
     int leftMaxi,leftMini,rightMaxi,rightMini;
     leftMaxi = rightMaxi = INT_MIN;
     leftMini = rightMini = INT_MAX;
-    
     int leftSum = solve(root->left,leftMaxi,leftMini,sum);
     int rightSum = solve(root->right,rightMaxi,rightMini,sum);
     
     int total = leftSum + rightSum + root -> val;
     
     if(leftMaxi < root -> val and root -> val < rightMini){
-        // Valid BST
         sum = max(sum,total);
         maxi = max(root -> val,rightMaxi);
         mini = min(root -> val,leftMini);
