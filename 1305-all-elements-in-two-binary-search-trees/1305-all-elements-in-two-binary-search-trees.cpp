@@ -21,7 +21,6 @@ public:
     }
     vector<int> getAllElements(TreeNode* root1, TreeNode* root2) {
        vector<int>v;
-        
        inorder(root1,v);
     inorder(root2,v);
         sort(v.begin(),v.end());
