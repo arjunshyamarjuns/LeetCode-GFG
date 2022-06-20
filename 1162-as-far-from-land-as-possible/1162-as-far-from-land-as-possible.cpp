@@ -13,7 +13,8 @@ public:
         }
         
         auto check = [&](int x, int y){
-            if(x<0 || x>=n || y<0 || y>=m || vis[x][y] || grid[x][y]) return false;
+            if(x<0 || x>=n || y<0 || y>=m || vis[x][y] || grid[x][y]) 
+                return false;
             return true;
         };
         int dx[4] = {1,0,-1,0};
