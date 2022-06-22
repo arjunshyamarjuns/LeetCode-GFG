@@ -1,7 +1,7 @@
 class Solution {
 public:
     int leastInterval(vector<char>& tasks, int n) {
-         unordered_map<char,int> mp;  
+        unordered_map<char,int> mp;  
         priority_queue<int> pq;
         for(auto c : tasks)
             mp[c]++;
@@ -21,7 +21,8 @@ public:
                     time++;
                 }
             }
-            for(int i : temp) if(--i) 
+            for(int i : temp) 
+                if(--i) 
                 pq.push(i);
             ans += (!pq.empty()) ? cycle : time;
         }
