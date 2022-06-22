@@ -9,13 +9,12 @@ public:
     }
     
     void addNum(int num) {
-        //insert value in heap
+
         if(max.empty() && min.empty() || num < max.top())
             max.push(num);
         else
             min.push(num);
-        
-        // balance heaps
+ 
         if(max.size() > min.size()+1)
         {
             min.push(max.top());
