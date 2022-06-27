@@ -3,9 +3,9 @@ public:
     int longestConsecutive(vector<int>& nums) {
         int n=nums.size();
         if(n==0) 
-        return 0;
+            return 0;
         unordered_map<int,bool>m;
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
         {
             m[nums[i]] = true;
         }
