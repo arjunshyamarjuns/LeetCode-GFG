@@ -1,33 +1,31 @@
 class Solution {
 public:
     int minDeletions(string s) {
-        unordered_map<int, int> freqMap;
-        
-        for(char c : s) {
-            freqMap[c]++;
+       unordered_map<char,int>mpp;
+        for(int i = 0;i < s.length();i++){
+            mpp[s[i]]++;
         }
-        //freqMapMap
-        map<int, vector<char>>  fmm;
-        
-        for(auto& [c, count] : freqMap) {
-            fmm[count].push_back(c);
-        }
-        
-        int ans = 0;
-        
-        for(auto it = fmm.rbegin(); it != fmm.rend(); it++) {
-            
-            int size = it->second.size();
-            int count = it->first;
-            if(count == 0) continue;
-            for(int i = 1; i < size; i++) {
-                fmm[count-1].push_back(it->second[i]);
+        set<int>st;
+        int count = 0;
+        // for(auto it : mpp){
+        //     cout << it.first << " : " << it.second << endl;
+        // }
+        for(auto it : mpp){
+            if(st.find(it.second) == st.end()){
+                st.insert(it.second);
+            }
+            else{
+                while(st.find(it.second) != st.end() && it.second != 0){
+                    it.second--;
+                    count++;
+                }
+                if(it.second != 0){
+                    st.insert(it.second);
+                }
             }
             
-            ans += size-1;
-            
         }
-        return ans;
+        return count;
         
     }
 };
