@@ -2,7 +2,6 @@ class Solution {
 public:
     int peakIndexInMountainArray(vector<int>& arr) {
         int start=0, end=arr.size()-1;
-         int mid=start+(end-start)/2;
         while(start<end)
         {
             int mid=start+(end-start)/2;
@@ -15,7 +14,6 @@ public:
                 end=mid;
                 
             }
-            mid=start+(end-start)/2;
         }
         return start;
     }
